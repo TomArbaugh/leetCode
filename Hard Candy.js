@@ -33,15 +33,30 @@ n == ratings.length
 0 <= ratings[i] <= 2 * 104
 */
 
-var candy = function(ratings) {
-    let candy = 0;
-    if (ratings[0] > ratings[1]) candy++
-    for (let i=0; i < ratings.length; i++){
-        candy++
-        if (ratings[i] < ratings[i+1]) candy++
-    }
-    return candy
-};
+// PASSES FIRST 13
+// var candy = function(ratings) {
+//     let candy = 0;
+//     if (ratings[0] > ratings[1]) candy++
+//     for (let i=0; i < ratings.length; i++){
+//         candy++
+//         if (ratings[i] < ratings[i+1]) candy++
+//     }
+//     return candy
+// };
+
+// PASSES FIRST 16
+// var candy = function(ratings) {
+//     let candy = 0;
+//     if (ratings[0] > ratings[1]) candy++
+//     for (let i=0; i < ratings.length; i++){
+//         candy++
+
+//         if (ratings[i] < ratings[i+1])  candy++
+//         if (ratings[i +1] < ratings[i] && ratings[i-1] >= ratings[i]) candy++  
+  
+//     }
+//     return candy
+// };
 
 ratings = [1,0,2]
 // Output: 5
@@ -54,3 +69,7 @@ console.log(candy(ratings2))
 ratings3 = [1,3,2,2,1]
 // Output: 7
 console.log(candy(ratings3))
+
+ratings4 = [1,2,87,87,87,2,1]
+// Output: 13 But why? I got 11, so I hit my target
+console.log(candy(ratings4))
